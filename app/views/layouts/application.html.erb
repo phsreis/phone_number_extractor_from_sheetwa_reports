@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Number Extractor</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true %>
+</head>
+
+<body>
+<p style="color: red;"><%= flash[:alert] %></p>
+<p style="color: green;"><%= flash[:notice] %></p>
+
+<%= yield %>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<h1>Phone Number Extractor</h1>
+<%= form_with url: extract_path, local: true, multipart: true do |form| %>
+  <p>Select Files to Process:</p>
+  <%= form.file_field :files, multiple: true %>
+
+  <br><br>
+  <%= form.submit "Extract Numbers", class: "btn btn-primary" %>
+<% end %>
