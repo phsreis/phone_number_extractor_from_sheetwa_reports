@@ -1,12 +1,12 @@
 # README
 
 ### Phone Number Extraction Tool for Sheetwa Reports
-A Rails web application to extract phone numbers and their WhatsApp statuses from uploaded HTML or text files. The tool
+A Rails web application to extract phone numbers from uploaded HTML or text files. The tool
 processes multiple files, extracts the required information, and allows you to download the results as a CSV file.
 
 ### Features
 - File Upload: Upload multiple files (HTML/TXT) simultaneously for processing. 
-- Phone Number & WhatsApp Status Extraction: Extracts phone numbers and their corresponding WhatsApp statuses from the files. 
+- Phone Number Extraction: Extracts phone numbers from the files. 
 - CSV Export: Download the extracted data as a CSV file. 
 - Error Handling: Displays appropriate messages for missing files, invalid data, or processing errors.
 
@@ -41,7 +41,7 @@ Access the application at http://localhost:3000.
 
 3. Extract Data:
 - Click the "Extract Numbers" button to process the files.
-- The application will extract phone numbers and WhatsApp statuses.
+- The application will extract phone numbers.
 
 4. Download CSV:
 
@@ -49,5 +49,4 @@ Access the application at http://localhost:3000.
 
 ### File Requirements
 - The uploaded files should contain:
-  - Phone numbers in a div[data-field="number"] tag. 
-  - WhatsApp statuses in a div[data-field="status"] tag.
+  - Phone numbers in a div[data-field="number"] tag.
