@@ -47,14 +47,12 @@ class ExtractorController < ApplicationController
     doc = Nokogiri::HTML(file.read)
 
     rows = doc.css('div[data-rowindex]')
+
     rows.each do |row|
       number_element = row.at_css('div[data-field="number"]')
       phone_number = number_element&.text&.strip
 
-      status_element = row.at_css('div[data-field="status"]')
-      status = status_element&.text&.strip
-
-      data << { number: phone_number, status: status } if phone_number && status
+      data << { number: phone_number } if phone_number
     end
 
     data
@@ -62,8 +60,11 @@ class ExtractorController < ApplicationController
 
   def generate_csv(data)
     CSV.generate(headers: true) do |csv|
-      csv << %w[Number Status]
-      data.each { |entry| csv << [entry[:number], entry[:status]] }
+      csv << %w[Number]
+
+      data.each do |entry|
+        csv << [entry[:number]]
+      end
     end
   end
 end
